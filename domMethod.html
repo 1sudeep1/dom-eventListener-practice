@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM pracice</title>
+    <link rel="stylesheet" href="/scss/style.css">
+    <script src="/js/script.js"></script>
+</head>
+
+<body>
+    <h1>DOM Methods Inner HTML</h1>
+    <!-- empty div ma value halne .innerHtml use garninxa -->
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p class="abc"></p>
+    <p class="abc"></p>
+    <p class="test"></p>
+    <p class="def"></p>
+    <p class="def"></p>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <a href=""></a>
+    <h3></h3>
+
+    <h1>DOM Methods getting values</h1>
+    <p id="name">My name is Sudeep Tharu</p>
+    <input type="text" id="inputField" value="Alina Chaudhary" />
+    <input type="text" id="inputField" value="Sudeep Tharu" />
+    <p class="item" data-info="info1">Item 1</p>
+    <p class="item" data-info="info2">Item 2</p>
+    <p id="paragraph" class="text-class" data-info="sampleData">Sample text</p>
+    <script>
+        // setting values
+        //id
+        document.getElementById('demo').innerHTML = 'Hi i am demo'
+        document.querySelector('#demo2').innerHTML = 'Hi i am demo2'
+
+        //class
+        document.getElementsByClassName('abc')[0].innerHTML = 'Hi i am 1st abc class'
+        document.getElementsByClassName('abc')[1].innerHTML = 'Hi i second abc class'
+        // querySelector le euta matra class lai linxa so we have to use querySelectorAll
+        document.querySelector('.test').innerHTML = 'Hi i am test'
+        document.querySelectorAll('.def')[0].innerHTML = 'Hi, I am first query selector class def';
+        document.querySelectorAll('.def')[1].innerHTML = 'Hi, I am second query selector class def';
+
+        //id bahek class ra tagname ma index dinu parxa
+        //tag
+        document.getElementsByTagName('span')[0].innerHTML = 'hi i am span tag 1'
+        document.getElementsByTagName('span')[1].innerHTML = 'hi i am span tag 2'
+        document.querySelectorAll('span')[2].innerHTML = 'hi i am query selector span tag 3'
+        document.querySelectorAll('span')[3].innerHTML = 'hi i am query selector span tag 4'
+
+        //textContent pani value set garne kaam garxa
+        document.querySelectorAll('a')[0].textContent = 'textContent.com'
+
+        //innerText pani value set garne kaam garxa
+        document.querySelectorAll('h3')[0].innerText = 'hello i am innerText'
+
+        //getting values
+        const name = document.querySelector('#name')
+        //3 otaile same print garxan
+        console.log(name.textContent)
+        console.log(name.innerHTML)
+        console.log(name.innerText)
+
+        //getting value from inputField .value input textArea select tag ma use hunxa
+        const inputFields = document.querySelectorAll('#inputField')
+        inputFields.forEach((inputField, index) => {
+            const inputValue = inputField.value
+            console.log(`Input Value ${index + 1}:`, inputValue);
+        })
+
+        
+        //getting attribute value
+
+        //dataset
+        console.log(document.querySelector('#paragraph').dataset.info)
+        console.log(document.querySelector('#paragraph').dataset.index)
+
+        let items = document.querySelectorAll('.item');
+        items.forEach((item, index) => {
+            let dataInfo = item.getAttribute('data-info');
+            console.log(`Item ${index + 1} Data Info:`, dataInfo);
+
+            //getting class Name
+            const classData = document.querySelector('#paragraph')
+            console.log('class name of paragraph is ', classData.className)
+        });
+
+        //styling
+        let paragraph = document.querySelector('#paragraph');
+        paragraph.style.backgroundColor = 'red';
+        paragraph.style.color = 'white';
+        paragraph.style.fontSize = '20px';
+        paragraph.style.padding = '10px';
+
+
+
+    </script>
+</body>
+
+</html>
