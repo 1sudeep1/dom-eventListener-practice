@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Deleting Replacing element</title>
+</head>
+
+<body>
+
+    <ul id="card">
+        <li>Hello first paragraph</li>
+        <li>Hello second paragraph</li>
+        <li>Hello third paragraph</li>
+    </ul>
+    <aside class="replaceAside">Existing Side</aside>
+
+    <script>
+        // methods
+
+        // document.createElement(element)	Create an HTML element
+        // document.removeChild(element)	Remove an HTML element
+        // document.appendChild(element)	Add an HTML element
+        // document.replaceChild(new, old)	Replace an HTML element
+        // document.write(text)	Write into the HTML output stream
+
+
+        //Adding new elements
+        // Create a new div element
+        const newDiv = document.createElement('div');
+
+        // Create a new paragraph element
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = "Hello, I am a new paragraph";
+
+        // Append the paragraph to the div
+        newDiv.appendChild(newParagraph);
+
+        // Append the div to the body of the document
+        document.body.appendChild(newDiv);
+
+        //adding id to the div
+        const addingId = document.querySelector('div')
+        addingId.setAttribute('id', 'container')
+        console.log(addingId.getAttribute("id"))
+
+        //removing the 1st element from the card
+        const cardData = document.querySelector('#card')
+        // const firstElement= cardData.firstElementChild
+        // cardData.removeChild(firstElement)
+
+        // Check if there are at least two children
+        if (cardData.children.length > 1) {
+            // Select the second child element
+            const firstElement = cardData.children[0];
+            const secondElement = cardData.children[1];
+            // Remove the second child element
+            cardData.removeChild(firstElement);
+            cardData.removeChild(secondElement);
+        }
+
+        //to remove whole card
+        cardData.remove()
+
+        //replace an HTML element
+        const divToReplace = document.querySelector('.replaceAside')
+        const nayaParagraph = document.createElement('h2')
+        nayaParagraph.textContent = 'This is new replaced paragraph'
+        divToReplace.parentNode.replaceChild(nayaParagraph, divToReplace)
+
+        //replacing the h2 content
+        const contentReplace = document.querySelector('h2')
+        contentReplace.textContent = 'Replaced h2'
+
+        //printint directly to screen
+        document.write('Hello World')
+    </script>
+</body>
+
+</html>

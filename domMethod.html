@@ -33,6 +33,7 @@
     <p class="item" data-info="info1">Item 1</p>
     <p class="item" data-info="info2">Item 2</p>
     <p id="paragraph" class="text-class" data-info="sampleData">Sample text</p>
+    <p id="setAttribute"></p>
     <script>
         // setting values
         //id
@@ -99,7 +100,10 @@
         paragraph.style.padding = '10px';
 
 
-
+        //set attribute
+        const setAttributeData= document.querySelector('#setAttribute')
+        setAttributeData.setAttribute("class", 'attributeClass')
+        console.log('Class attribute set:', setAttributeData.getAttribute('class'));
     </script>
 </body>
 
