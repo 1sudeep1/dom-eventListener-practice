@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+    <link rel="stylesheet" href="/scss/style.css">
+</head>
+
+<body>
+    <h1>DOM Events Example</h1>
+    <!-- onClick -->
+    <h2 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h2>
+    <h2 onclick="changeText(this)">Click on this text!</h2>
+    <button onclick="displayDate()">Try it</button>
+    <button id="btn">Button</button>
+    <button id="dblClick">Double Click</button>
+
+    <!-- form -->
+    <input type="text" id="oninputid" placeholder="input gardai uppercase ma change huxa" />
+    <input type="text" id="onchangeid" placeholder="input garisake paxi ball uppercase ma change hunxa" />
+    <input type="text" id="focusId" placeholder="focus ">
+    <button class="submit" type="submit">Submit</button>
+    <button class="reset" type="reset">Reset</button>
+
+    <label for="selectInput">Select Input:</label>
+    <select id="selectInput" name="selectInput">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+
+
+    <div id="mousehover">hover here</div>
+    <div id="longClick">Long click</div>
+    <div id="mouseArea" style="width: 200px; height: 100px; background-color: lightblue;">
+        Hover or click me
+    </div>
+
+    <script>
+        //onClick event
+        function changeText(id) {
+            id.innerHTML = 'wow!!'
+        }
+        function displayDate() {
+            const dateParagraph = document.createElement('p')
+            dateParagraph.innerHTML = Date()
+            document.body.appendChild(dateParagraph)
+        }
+
+        document.querySelector('#btn').onclick = function () {
+            alert('Button clicked');
+        }
+
+        document.querySelector('#dblClick').ondblclick = function () {
+            alert('Button double clicked')
+        }
+
+        // onload and onunload
+        function onPageLoad() {
+            alert('Page loaded')
+        }
+
+        function onPageUnLoad() {
+            alert('Page about to be unloaded')
+        }
+
+        window.onload = onPageLoad;
+        window.onunload = onPageUnLoad;
+
+        //oninput
+        const inputName = document.querySelector("#oninputid")
+        inputName.oninput = function () {
+            inputName.value = inputName.value.toUpperCase()
+        }
+
+        //onchange
+        const inputData = document.querySelector("#onchangeid")
+        inputData.onchange = function () {
+            inputData.value = inputData.value.toUpperCase()
+        }
+
+        //onfocus
+        const inputFocus= document.querySelector('#focusId')
+        inputFocus.onfocus= function(){
+            inputFocus.style.backgroundColor='red'
+        }
+        inputFocus.onblur= function(){
+            inputFocus.style.backgroundColor='white'
+        }
+
+        //onsubmit
+        const buttonSubmit= document.querySelector('.submit')
+        buttonSubmit.onclick=function(event){
+            event.preventDefault()
+            console.log('Form submitted');
+        }
+
+        //onreset
+        const buttonReset= document.querySelector('.reset')
+        buttonReset.onclick=function(event){
+            event.preventDefault()
+            console.log('Form reseted');
+        }
+
+        // Select input change event
+        const inputChangeEvent= document.querySelector('#selectInput')
+        inputChangeEvent.onchange=function(){
+            console.log(inputChangeEvent.value)
+        }
+
+
+        //onmouseover===hover and onmouseout===hover out
+        const hoverDiv = document.querySelector("#mousehover")
+        hoverDiv.onmouseover = function () {
+            hoverDiv.innerHTML = "Thank you"
+            hoverDiv.style.backgroundColor = "green"
+        }
+        hoverDiv.onmouseout = function () {
+            hoverDiv.innerHTML = "hover here"
+            hoverDiv.style.backgroundColor = "red"
+        }
+
+        //onmousedown and onmouseup
+        const longClickDiv= document.querySelector("#longClick")
+        longClickDiv.onmousedown=function(){
+            //click gari rakhem bhane yo show hunxa
+            longClickDiv.innerHTML="long clicked"
+        }
+        longClickDiv.onmouseup=function(){
+            //click xodne bittikai yo show hunxa
+            longClickDiv.innerHTML="leave now"
+        }
+
+        //onmousemove and onmouseenter is similar to onmouseover
+        //onmouseleave is similar to onmouseout
+        const mouseAreaEvent= document.querySelector("#mouseArea")
+        mouseAreaEvent.onmousemove=function(){
+            console.log('hello i am mouse area')
+        }
+        mouseAreaEvent.onmouseenter= function(){
+            console.log('mouse entered')
+        }
+        mouseAreaEvent.onmouseleave=function(){
+            console.log('mouse is leaved')
+        }
+        //right click garna rokxa
+        document.oncontextmenu=function(e){
+            e.preventDefault()
+        }
+    </script>
+</body>
+
+</html>

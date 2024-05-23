@@ -1,1 +1,19 @@
-/*# sourceMappingURL=style.css.map */
+#mousehover {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#longClick {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
