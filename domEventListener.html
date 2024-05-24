@@ -33,6 +33,13 @@
     <div style="width: 100px; height: 100px; background-color:gray;" id="longClick">Long click</div>
     <div style="width: 100px; height: 100px; background-color:green;" id="mouseMove">Mouse move</div>
     <div style="width: 100px; height: 100px; background-color:pink;" id="mouseEnterLeave">Mouse move</div>
+
+    <!-- key events -->
+    <input type="text" id="textInput" placeholder="Type something here">
+<br>
+    <!-- copy events -->
+    <textarea id="textArea" placeholder="Try copying this text"></textarea>
+
     <script>
         //click
         const button = document.querySelector('#myButton')
@@ -89,49 +96,71 @@
         })
 
         //mouse event
-        const mouseHover= document.querySelector('#mousehover')
-        mouseHover.addEventListener('mouseover', function(){
-            mouseHover.style.backgroundColor='red'
+        const mouseHover = document.querySelector('#mousehover')
+        mouseHover.addEventListener('mouseover', function () {
+            mouseHover.style.backgroundColor = 'red'
         })
-        mouseHover.addEventListener('mouseout', function(){
-            mouseHover.style.backgroundColor='blue'
+        mouseHover.addEventListener('mouseout', function () {
+            mouseHover.style.backgroundColor = 'blue'
         })
 
-        const mouseClick= document.querySelector('#longClick')
-        mouseClick.addEventListener('mousedown', function(){
-            mouseClick.style.backgroundColor='white'
+        const mouseClick = document.querySelector('#longClick')
+        mouseClick.addEventListener('mousedown', function () {
+            mouseClick.style.backgroundColor = 'white'
         })
-        mouseClick.addEventListener('mouseup', function(){
-            mouseClick.style.backgroundColor='gray'
+        mouseClick.addEventListener('mouseup', function () {
+            mouseClick.style.backgroundColor = 'gray'
         })
 
         //mousemove is same as mouseover
-        const mouseMove= document.querySelector('#mouseMove')
-        mouseMove.addEventListener('mousemove', function(){
-            mouseMove.style.color='red'
+        const mouseMove = document.querySelector('#mouseMove')
+        mouseMove.addEventListener('mousemove', function () {
+            mouseMove.style.color = 'red'
         })
-        mouseMove.addEventListener('mouseout', function(){
-            mouseMove.style.color='black'
+        mouseMove.addEventListener('mouseout', function () {
+            mouseMove.style.color = 'black'
         })
 
         //mouseenter mouseleave
-        const mouseEnterLeave= document.querySelector('#mouseEnterLeave')
-        mouseEnterLeave.addEventListener('mouseenter', function(){
-            mouseEnterLeave.style.backgroundColor='orange'
+        const mouseEnterLeave = document.querySelector('#mouseEnterLeave')
+        mouseEnterLeave.addEventListener('mouseenter', function () {
+            mouseEnterLeave.style.backgroundColor = 'orange'
         })
-        mouseEnterLeave.addEventListener('mouseleave', function(){
-            mouseEnterLeave.style.backgroundColor='pink'
+        mouseEnterLeave.addEventListener('mouseleave', function () {
+            mouseEnterLeave.style.backgroundColor = 'pink'
         })
 
         //note (mouseover, mousemove, mouseenter are same)
         // (mouseout, mouseleave are same)
 
         //right click huna bata bachauxa
-        document.addEventListener('contextmenu', function(e){
+        document.addEventListener('contextmenu', function (e) {
             // e.preventDefault()
             // console.log('prevented')
         })
-        
+
+        //key event
+        //keyboard events keydown==j key thichyo tyai linxa, onkeyup ==thichisake paxi release garda balla linxa
+        const textInput = document.querySelector('#textInput')
+        textInput.addEventListener('keydown', function (e) {
+            console.log(e.key, 'is pressed')
+        })
+
+        textInput.addEventListener('keyup', function (e) {
+            console.log(e.key, ' is released')
+        })
+
+        // Clipboard events
+        const textArea = document.querySelector('#textArea');
+        textArea.oncopy = function () {
+            console.log('Text copied!');
+        };
+        textArea.oncut = function () {
+            console.log('Text cut!');
+        };
+        textArea.onpaste = function () {
+            console.log('Text pasted!');
+        };
 
     </script>
 </body>
