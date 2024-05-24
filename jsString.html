@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String</title>
+</head>
+
+<body>
+    <h1>JavaScript String</h1>
+    <ul>
+        <li>String length</li>
+        <li>String charAt()</li>
+        <li>String charCodeAt()</li>
+        <li>String at()</li>
+        <li>String [ ]</li>
+        <li>String slice()</li>
+        <li>String substring()</li>
+        <li>String substr()</li>
+        <li>String toUpperCase()</li>
+        <li>String toLowerCase()</li>
+        <li>String concat()</li>
+        <li>String trim()</li>
+        <li>String trimStart()</li>
+        <li>String trimEnd()</li>
+        <li>String padStart()</li>
+        <li>String padEnd()</li>
+        <li>String repeat()</li>
+        <li>String replace()</li>
+        <li>String replaceAll()</li>
+        <li>String split()</li> 
+        See Also:
+        <li>
+            String Search Methods
+            <ul>
+                <li>String indexOf()</li>
+                <li>String lastIndexOf()</li>
+                <li>String search()</li>
+                <li>String match()</li>
+                <li>String matchAll()</li>
+                <li>String includes()</li>
+                <li>String startsWith()</li>
+                <li>String endsWith()</li>
+            </ul>
+        </li>
+        <li>String Templates</li>
+    </ul>
+
+
+
+<script>
+  
+    let str = "Hello, World!";
+    // length 
+    console.log(str.length); //Returns the length of string
+
+
+    // charAt()
+    console.log(str.charAt(0)); //  Returns the character at the specified index.
+    // at()
+    console.log(str.at(0)); // Returns the character at the specified index.
+    // String [ ]
+    console.log(str[0]); // Returns the character at the specified index.
+
+
+    // charCodeAt()
+    console.log(str.charCodeAt(0)); // Returns the Unicode of the character at the specified index.
+
+    // slice(start, end)
+    console.log(str.slice(7, 12)); // (start ==>jaha baat start hunxa) (end==> tyo number ko 1 kam ma end hunxa)
+    // substring(start, end)
+    console.log(str.substring(7, 12)); //(start ==>jaha baat start hunxa) (end==> tyo number ko 1 kam ma end hunxa)
+    //substr(start, end)
+    console.log(str.substr(7, 12)); //(start==>jaha bata start hunxa) (end====>  jati number xa tyah samma matra)
+
+    //toUpperCase()
+    console.log(str.toUpperCase()); //Converts the string to uppercase.
+    
+    //toLowerCase()
+    console.log(str.toLowerCase()); // Converts the string to lowercase.
+
+    // concat()
+    let str1 = "Hello";
+    let str2 = "World";
+    console.log(str1.concat(", ", str2, "!")); //Combines the text of two or more strings and returns a new string.
+
+    //trim()
+    let str3 = "   Hello, World!   ";
+    console.log(str.trim()); //Removes whitespace from both ends of a string.
+
+    // trimStart() / trimLeft()
+    console.log(str3.trimStart()); //Removes whitespace only from the start of a string.
+
+    //trimEnd() / trimRight()
+    console.log(str3.trimEnd()); //Removes whitespace only from the end of a string.
+
+    //padStart()
+    let padString= '5'
+    console.log(padString.padStart(5, 'a')) //afu agadi jati number xa tesko 1 kam string add gardinxa
+    //padEnd()
+    console.log(padString.padEnd(3, 's')) //sfu paxadi jati number xa tesko 1 kam string add gardinxa
+
+    //repeat(count)
+    console.log(str.repeat(3)); //Returns a new string with a specified number of copies of the original string.
+
+    //replace(searchValue, newValue)
+    console.log(str.replace("World", "Universe")); //Replaces occurrences of a specified value with another value in a string.
+
+    //replaceAll()
+    let text = "I love cats. Cats are very easy to love. Cats are very popular."
+    text = text.replaceAll("Cats","Dogs");
+    text = text.replaceAll("cats","dogs");
+    console.log(text)
+
+    //split(separator, limit)
+    let splitString= 'Hello, World'
+    console.log(splitString.split(',')) //Splits a string into an array of substrings.
+
+    //
+</script>
+</body>
+
+</html>
