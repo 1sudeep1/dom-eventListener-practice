@@ -45,6 +45,11 @@
     </div>
     <div id="dropArea" style="width: 200px; height: 100px; background-color: lightblue;">Drop here</div>
 
+    <!-- media events -->
+    <video id="video" width="320" height="240" controls>
+        <source src="movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <script>
         //click
         const button = document.querySelector('#myButton')
@@ -187,6 +192,23 @@
             console.log('Dropped: ' + data);
         };
 
+        // Media events
+        const video = document.querySelector('#video');
+        video.onplay = function() {
+            console.log('Video playing');
+        };
+        video.onpause = function() {
+            console.log('Video paused');
+        };
+        video.onended = function() {
+            console.log('Video ended');
+        };
+        video.ontimeupdate = function() {
+            console.log('Current time: ' + video.currentTime);
+        };
+        video.onvolumechange = function() {
+            console.log('Volume changed: ' + video.volume);
+        };
     </script>
 </body>
 
