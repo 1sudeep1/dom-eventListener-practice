@@ -28,7 +28,11 @@
         <option value="option3">Option 3</option>
     </select>
 
-
+    <!-- mouse events -->
+    <div style="width: 100px; height: 100px; background-color: blue;" id="mousehover">hover here</div>
+    <div style="width: 100px; height: 100px; background-color:gray;" id="longClick">Long click</div>
+    <div style="width: 100px; height: 100px; background-color:green;" id="mouseMove">Mouse move</div>
+    <div style="width: 100px; height: 100px; background-color:pink;" id="mouseEnterLeave">Mouse move</div>
     <script>
         //click
         const button = document.querySelector('#myButton')
@@ -83,6 +87,52 @@
         selectData.addEventListener('change', function () {
             console.log(selectData.value)
         })
+
+        //mouse event
+        const mouseHover= document.querySelector('#mousehover')
+        mouseHover.addEventListener('mouseover', function(){
+            mouseHover.style.backgroundColor='red'
+        })
+        mouseHover.addEventListener('mouseout', function(){
+            mouseHover.style.backgroundColor='blue'
+        })
+
+        const mouseClick= document.querySelector('#longClick')
+        mouseClick.addEventListener('mousedown', function(){
+            mouseClick.style.backgroundColor='white'
+        })
+        mouseClick.addEventListener('mouseup', function(){
+            mouseClick.style.backgroundColor='gray'
+        })
+
+        //mousemove is same as mouseover
+        const mouseMove= document.querySelector('#mouseMove')
+        mouseMove.addEventListener('mousemove', function(){
+            mouseMove.style.color='red'
+        })
+        mouseMove.addEventListener('mouseout', function(){
+            mouseMove.style.color='black'
+        })
+
+        //mouseenter mouseleave
+        const mouseEnterLeave= document.querySelector('#mouseEnterLeave')
+        mouseEnterLeave.addEventListener('mouseenter', function(){
+            mouseEnterLeave.style.backgroundColor='orange'
+        })
+        mouseEnterLeave.addEventListener('mouseleave', function(){
+            mouseEnterLeave.style.backgroundColor='pink'
+        })
+
+        //note (mouseover, mousemove, mouseenter are same)
+        // (mouseout, mouseleave are same)
+
+        //right click huna bata bachauxa
+        document.addEventListener('contextmenu', function(e){
+            // e.preventDefault()
+            // console.log('prevented')
+        })
+        
+
     </script>
 </body>
 
