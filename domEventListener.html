@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event Listener</title>
+</head>
+
+<body>
+    <!-- click -->
+    <button id="myButton">Click me</button>
+
+    <!-- form -->
+    <input type="text" id="myInput" placeholder="input gardai uppercase ma change huxa" />
+    <br>
+    <input type="text" id="onchangeid" placeholder="input garisake paxi ball uppercase ma change hunxa" />
+    <br>
+    <input type="text" id="focusId" placeholder="focus ">
+    <br>
+    <button class="submit" type="submit">Submit</button>
+    <button class="reset" type="reset">Reset</button>
+    <br>
+    <label for="selectInput">Select Input:</label>
+    <select id="selectInput" name="selectInput">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+
+
+    <script>
+        //click
+        const button = document.querySelector('#myButton')
+        button.addEventListener('click', function () {
+            button.innerHTML = 'Clicked'
+        })
+
+        //dbl click
+        button.addEventListener('dblclick', function () {
+            console.log('button is double clicked')
+        })
+
+        //form
+        //input
+        const myInput = document.querySelector('#myInput')
+        myInput.addEventListener('input', function () {
+            myInput.value = myInput.value.toUpperCase()
+        })
+
+        //change
+        const onChangeData = document.querySelector('#onchangeid')
+        onChangeData.addEventListener('change', function () {
+            onChangeData.value = onChangeData.value.toUpperCase()
+        })
+
+        //focus
+        const focusData = document.querySelector('#focusId')
+        focusData.addEventListener('focus', function () {
+            focusData.style.backgroundColor = 'pink'
+        })
+        //blur
+        focusData.addEventListener('blur', function () {
+            focusData.style.backgroundColor = 'white'
+            focusData.style.border = '1px solid #ccc';
+        })
+
+        //submit
+        const submitData = document.querySelector('.submit')
+        submitData.addEventListener('click', function (e) {
+            e.preventDefault()
+            console.log('form submitted')
+        })
+
+        //reset
+        const resetData = document.querySelector('.reset')
+        resetData.addEventListener('click', function (e) {
+            e.preventDefault()
+            console.log('form reseted')
+        })
+        //select
+        const selectData = document.querySelector('#selectInput')
+        selectData.addEventListener('change', function () {
+            console.log(selectData.value)
+        })
+    </script>
+</body>
+
+</html>
