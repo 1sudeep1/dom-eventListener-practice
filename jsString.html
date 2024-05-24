@@ -47,8 +47,6 @@
         <li>String Templates</li>
     </ul>
 
-
-
 <script>
   
     let str = "Hello, World!";
@@ -117,7 +115,45 @@
     let splitString= 'Hello, World'
     console.log(splitString.split(',')) //Splits a string into an array of substrings.
 
-    //
+    //indexOf(searchValue, fromIndex)
+    const searchString= "ok Hello World! ok";
+    console.log(searchString.indexOf('World')) //Returns the index of the first occurrence of the specified value, or -1 if not found.
+    console.log(searchString.indexOf('world')) //kunai word ko first letter ko index dinxa, edi word nai bhetyaena bhane -1 return garxa
+
+    //lastIndexOf(searchValue, fromIndex)
+    console.log(searchString.lastIndexOf('ok')) //edi same word repeat xan bhane last ma jun word xa tesko first letter ko index dinxa
+    console.log(searchString.lastIndexOf("world")); //if no word then returns -1
+
+    //search(regexp)
+    console.log(searchString.search("ok")); //esle ni search gareko word ko index return garxa, edi repeated xan bhane 1st word ko index dinxa
+    console.log(searchString.search("ko"));  // edi word nai bhetyana bhane -1 return garxa
+
+    //match(regexp)
+    let matchString = "The rain in SPAIN stays mainly in the plain";
+    console.log(matchString.match('ain'));
+    console.log(matchString.match(/ain/));
+    console.log(matchString.match(/ain/g));//global with case sensetive jati wata xa teti wata return garxa
+    console.log(matchString.match(/ain/gi));//global with case insensetive
+
+    //matchAll()
+    const matchString1="I love cats. Cats are very easy to love. Cats are very popular."
+    console.log(matchString1.matchAll(/Cats/g))
+
+    //includes(searchString, position)
+    console.log(str.includes("World")); //Checks if a string contains the specified substring. returns true or false
+    console.log(str.includes("world"));
+
+    //startsWith(searchString, position)
+    console.log(str.startsWith("Hello")); // true Checks if a string starts with the specified substring.
+    console.log(str.startsWith("World", 7)); // true
+
+    //endsWith(searchString, length)
+    console.log(str.endsWith("World!")); // true Checks if a string ends with the specified substring.
+    console.log(str.endsWith("world!")); // false
+
+    // valueOf()
+    let valueOfString = new String("Hello, World!");
+    console.log(valueOfString.valueOf());  //Returns the primitive value of a String object.
 </script>
 </body>
 
