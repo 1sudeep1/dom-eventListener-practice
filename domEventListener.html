@@ -36,9 +36,14 @@
 
     <!-- key events -->
     <input type="text" id="textInput" placeholder="Type something here">
-<br>
+    <br>
     <!-- copy events -->
     <textarea id="textArea" placeholder="Try copying this text"></textarea>
+
+    <!-- drag and drop events -->
+    <div id="dragDropArea" style="width: 200px; height: 100px; background-color: lightgray;" draggable="true">Drag me
+    </div>
+    <div id="dropArea" style="width: 200px; height: 100px; background-color: lightblue;">Drop here</div>
 
     <script>
         //click
@@ -160,6 +165,26 @@
         };
         textArea.onpaste = function () {
             console.log('Text pasted!');
+        };
+
+        // Drag and Drop events
+        const dragDropArea = document.querySelector('#dragDropArea');
+        const dropArea = document.querySelector('#dropArea');
+
+        dragDropArea.ondragstart = function (event) {
+            event.dataTransfer.setData('text/plain', 'This is a drag-and-drop example');
+            console.log('Drag started');
+        };
+
+        dropArea.ondragover = function (event) {
+            event.preventDefault();
+            console.log('Dragging over drop area');
+        };
+
+        dropArea.ondrop = function (event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData('text/plain');
+            console.log('Dropped: ' + data);
         };
 
     </script>
