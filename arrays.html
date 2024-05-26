@@ -9,7 +9,7 @@
 
 <body>
     <h1>Arrays method and properties</h1>
-    <h3>Array Methods</h3>
+    <h3>Basic Array Methods</h3>
     <ol>
         <li>
             Array length
@@ -107,6 +107,51 @@
             Array slice()
             <dl>
                 <dt>The slice() method slices out a piece of an array into a new array.</dt>
+            </dl>
+        </li>
+    </ol>
+    <h3>Array Search Methods</h3>
+    <ol>
+        <li>
+            Array indexOf()
+            <dl>
+                <dt>The indexOf method returns the first index at which a given element can be found in the array, or -1 if it is not present.</dt>
+            </dl>
+        </li>
+        <li>
+            Array lastIndexOf()
+            <dl>
+                <dt>The lastIndexOf method returns the last index at which a given element can be found in the array, or -1 if it is not present.</dt>
+            </dl>
+        </li>
+        <li>
+            Array includes()
+            <dl>
+                <dt>The includes method determines whether an array includes a certain value among its entries, returning true or false.</dt>
+            </dl>
+        </li>
+        <li>
+            Array find()
+            <dl>
+                <dt>The find method returns the value of the first element in the array that satisfies the provided testing function. Otherwise, it returns undefined.</dt>
+            </dl>
+        </li>
+        <li>
+            Array findIndex()
+            <dl>
+                <dt>The findIndex method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1.</dt>
+            </dl>
+        </li>
+        <li>
+            Array findLast()
+            <dl>
+                <dt>the findLast() method that will start from the end of an array and return the value of the first element that satisfies a condition.</dt>
+            </dl>
+        </li>
+        <li>
+            Array findLastIndex()
+            <dl>
+                <dt>The findLastIndex() method finds the index of the last element that satisfies a condition.</dt>
             </dl>
         </li>
     </ol>
@@ -330,6 +375,38 @@
         const copiedFruits = fall.slice();//fall ko sabai item cut gari afu ma lyauxa
         console.log(copiedFruits)
         console.log(fall===copiedFruits) //false
+
+        //Array indexOf()
+        const books=['english', 'nepali', 'maths', 'social']
+        console.log(books.indexOf('social')) //index position return garxa, edi same item dherai xan bhane serial wise search garxa jun first ma bhetauxa tesko index return garxa
+        console.log(books.indexOf('health')) //edi bhetyana bhane -1 return garxa
+
+        //Array lastIndexOf()
+        console.log(books.lastIndexOf('social')) //esle ni index return garxa, edi same item dherai xan bhane last tira bata count garxa, last tira bata jun first ma auxa tesko index return garxa
+        console.log(books.indexOf('health')) //edi bhetyana bhane -1 return garxa
+
+        //Array includes()
+        console.log(books.includes('social')) //true
+        console.log(books.includes('health')) //false
+
+        //Array find()
+        const numb = [1, 2, 3, 4, 5, 6];
+        const firstEven= numb.find(n=>n%2===0) //serial wise check garxa jun number first ma match garxa tyai return garxa, baki aru check gardaina
+        console.log(firstEven)
+
+        //Array findIndex()
+        const firstIndex= numb.findIndex(n=>n%2===0)
+        console.log(firstIndex) //serial wise check garxa jun number first ma match garxa tyai number ko index return garxa, baki eti kai xordinxa
+    
+        //Array findLast()   
+        const lastEven= numb.findLast(n=>n%2===0) //serial wise but last bata search garxa
+        console.log(lastEven)
+
+        //Array findLastIndex()
+        const lastIndex= numb.findLastIndex(n=>n%2===0)
+        console.log(lastIndex)
+
+        
     </script>
 </body>
 
