@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+
+<body>
+    <h1>JavaScript Exercises</h1>
+    <ol>
+        <li>Write a JavaScript program to check two numbers and return true if one of the number is 100 or if the sum of
+            the two numbers is 100</li>
+        <li>Write a JavaScript program to get the extension of file name</li>
+        <li>Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.</li>
+        <li>Write a JavaScript program to get the current date.</li>
+        <li>Write a JavaScript program to create a new string adding "New!" in front of a given string. If the given string begins with  "New!" already then return the original array.</li>
+
+    </ol>
+    <script>
+        // const num1 = 10;
+        // const num2 = 90;
+        // if (num1 === 100 || num2 === 100 || (num1 + num2 === 100)) {
+        //     console.log(true)
+        // } else {
+        //     console.log(false)
+        // }
+        const isEqualTo100=(a,b)=> a===100 || b===100 || (a+b)===100
+        console.log(isEqualTo100(10, 90))
+
+        // const file= 'file.txt';
+        // console.log(file.slice(file.lastIndexOf('.')))
+        const findExtension= (str)=>str.slice(str.lastIndexOf('.'))
+        console.log(findExtension('index.html'))
+
+        const moveCharsForward=(str)=>str.split('').map(char=>String.fromCharCode(char.charCodeAt(0)+1)).join('')
+        console.log(moveCharsForward('abcd'))
+
+        const formatedDate= (date= new Date())=>{
+            const days= date.getDay()
+            const months= date.getMonth()
+            const years= date.getFullYear()
+            return `${days}/${months}/${years}`
+        }
+        console.log(formatedDate())
+
+        const addNew=(str)=>str.indexOf('New!')===0? str: `New! ${str}`
+        console.log(addNew('New! bag'))
+    </script>
+</body>
+
+</html>
