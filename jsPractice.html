@@ -16,7 +16,10 @@
         <li>Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.</li>
         <li>Write a JavaScript program to get the current date.</li>
         <li>Write a JavaScript program to create a new string adding "New!" in front of a given string. If the given string begins with  "New!" already then return the original array.</li>
-
+        <li>Write a JavaScript program to create a new string from a given string taking the first 3 characters and the last 3 characters of a string and adding them together. The string length must be 3 or more, if not, the original string is returned.</li>
+        <li>Write a JavaScript prgoram to extract the first half of a string of even length</li>
+        <li>Write a JavaScript program to concatenate two string except their first character</li>
+        <li>Given two values, write a JavaScript program to find out which one is nearest to 100</li>
     </ol>
     <script>
         // const num1 = 10;
@@ -47,6 +50,42 @@
 
         const addNew=(str)=>str.indexOf('New!')===0? str: `New! ${str}`
         console.log(addNew('New! bag'))
+
+        // const name= 'alinasudeep'
+        // const firstPart= name.slice(0,3)
+        // console.log(firstPart)
+        // const lastPart= name.slice(-3)
+        // console.log(lastPart)
+        // const finalResult= firstPart.concat(lastPart)
+        // console.log(finalResult)
+        const concatChar3=(str)=>str.length>3? str.slice(0,3).concat(str.slice(-3)):str
+        console.log(concatChar3('sudeepalina'))
+
+        // const name='sudeep'
+        // const nameHalfLength= name.length/2
+        // console.log(name.slice(0, nameHalfLength))
+        const firstHalfString=(str)=>str.length%2===0? str.slice(0, str.length/2): null
+        console.log(firstHalfString('yellow'))
+
+        // const name1= 'ram';
+        // const name2= 'shyam';
+        // console.log(name1.slice(1)+name2.slice(1))
+        const concatExceptFirstCharString= (str1, str2)=>str1.slice(1)+str2.slice(1)
+        console.log(concatExceptFirstCharString('hello', 'hi'))
+
+
+        // const num1=90
+        // const num2=60
+        // if(100-num1<100-num2){
+        //     console.log('num1 is nearest to 100')
+        // }else{
+        //     console.log('num2 is nearest to 100')
+        // }
+
+        const nearestTo100=(num1, num2)=>(100-num1)<(100-num2)? `${num1} is nearest to 100`: `${num2} is nearest to 100`
+        console.log(nearestTo100(50,20))
+
+
     </script>
 </body>
 
