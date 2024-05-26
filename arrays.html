@@ -9,6 +9,107 @@
 
 <body>
     <h1>Arrays method and properties</h1>
+    <h3>Array Methods</h3>
+    <ol>
+        <li>
+            Array length
+            <dl>
+                <dt>The length property returns the length (size) of an array:</dt>
+            </dl>
+        </li>
+        <li>
+            Array toString()
+            <dl>
+                <dt>The JavaScript method toString() converts an array to a string of (comma separated) array values.
+                </dt>
+            </dl>
+        </li>
+        <li>
+            Array at()
+            <dl>
+                <dt>specific value can be get according to the index</dt>
+            </dl>
+        </li>
+        <li>
+            Array join()
+            <dl>
+                <dt>toString() jastai kaam garxa, array element lai string ma convert gari coma le separate garxa. But
+                    join() chai, exma hamile afno xuttai separator lagauna sakxau.</dt>
+            </dl>
+        </li>
+        <li>
+            Array push()
+            <dl>
+                <dt>The push() method adds a new element to an array (at the end):</dt>
+            </dl>
+        </li>
+        <li>
+            Array pop()
+            <dl>
+                <dt>The pop() method removes the last element from an array:</dt>
+            </dl>
+        </li>
+        <li>
+            Array shift()
+            <dl>
+                <dt>The shift() method removes the first array element and "shifts" all other elements to a lower index.
+                </dt>
+            </dl>
+        </li>
+        <li>
+            Array unshift()
+            <dl>
+                <dt>The unshift() method adds a new element to an array (at the beginning), and "unshifts" older
+                    elements:</dt>
+            </dl>
+        </li>
+        <li>
+            Array delete()
+            <dl>
+                <dt>Using delete() leaves undefined holes in the array. Use pop() or shift() instead.</dt>
+            </dl>
+        </li>
+        <li>
+            Array concat()
+            <dl>
+                <dt>The concat() method creates a new array by merging (concatenating) existing arrays:</dt>
+            </dl>
+        </li>
+        <li>
+            Array copyWithin()
+            <dl>
+                <dt>The copyWithin() method copies array elements to another position in an array:</dt>
+            </dl>
+        </li>
+        <li>
+            Array flat()
+            <dl>
+                <dt>The flat() method creates a new array with sub-array elements concatenated to a specified depth.
+                </dt>
+            </dl>
+        </li>
+        <li>
+            Array splice()
+            <dl>
+                <dt>The splice() method can be used to add new items to an array, remove existing items from array,
+                    replacing the items in array.</dt>
+            </dl>
+        </li>
+        <li>
+            Array toSpliced()
+            <dl>
+                <dt>The difference between the new toSpliced() method and the old splice() method is that the new method
+                    creates a new array, keeping the original array unchanged, while the old method altered the original
+                    array.</dt>
+            </dl>
+        </li>
+        <li>
+            Array slice()
+            <dl>
+                <dt>The slice() method slices out a piece of an array into a new array.</dt>
+            </dl>
+        </li>
+    </ol>
     <script>
         //creating array
         //3 ways to create array
@@ -30,16 +131,205 @@
         console.log(carr[1])
 
         //Changing an Array Element
-        cars[1]='Maruti'
+        cars[1] = 'Maruti'
         console.log(cars)
 
-        car[0]='ranger'
+        car[0] = 'ranger'
         console.log(car)
 
-        carr[2]='keya'
+        carr[2] = 'keya'
         console.log(carr)
 
-        
+        //Arrays are Objects
+        //arrays
+        const person = ["John", "Doe", 46];
+        //[]
+        console.log(person[2])
+        //Array at()
+        console.log(person.at(0))
+
+        //objects
+        const person1 = { firstName: "John", lastName: "Doe", age: 46 };
+        console.log(person1.lastName)
+
+        //Array Elements Can Be Objects
+        const myArr = []
+        myArr[0] = Date();
+        myArr[1] = person
+        console.log(myArr)
+
+        //Array Properties and Methods
+        //.length
+        console.log(cars.length) // Reconsole.log(ars.sort() )turns the number of elements
+
+        //.sort()
+        console.log(cars.sort()) //sorts the array in ascending order
+
+        //accessing first element of array
+        console.log(cars[0])
+
+        //accssing last element of array
+        console.log(cars[cars.length - 1])
+
+        //looping array element
+        const mobile = ['samsung', 'nokia', 'iphone', 'redmi']
+        //for loop
+        const mobileLength = mobile.length;
+        for (let i = 0; i < mobileLength; i++) {
+            console.log(i + 1, mobile[i])
+        }
+
+        //forEach() loop
+        mobile.forEach((item, itemId) => {
+            console.log(itemId + 1, item)
+        })
+
+        //Converting an Array to a String
+        //toString()
+        const fruits = ['apple', 'orange', 'banana', 'mango']
+        console.log(fruits.toString())
+        //Array join()
+        //The join() method also joins all array elements into a string.
+        console.log(fruits.join('+'))
+
+        //push()
+        //array ko last ma push gardinxa
+        fruits.push('guava', 'litchi')
+        console.log(fruits)
+
+        //pop()
+        //array ko last bata item remove garxa
+        fruits.pop() //esle single item matra remove garxa
+        console.log(fruits)
+
+        //to remove multiple items
+        //3 choti pop() call hunxa
+        let numberOfItemsToRemove = 3;
+        for (let i = 0; i < numberOfItemsToRemove; i++) {
+            fruits.pop()
+        }
+        console.log(fruits)
+
+        //shift()
+        //array ko first element remove garxa
+        const name = ['sudeep', 'suman', 'arun', 'pramila']
+        name.shift();
+        console.log(name)
+
+        //Array unshift()
+        //array ko first index ma value add garxa
+        name.unshift('alina', 'sudeep')
+        console.log(name)
+
+        //array delete()
+        //esle value matra hatauxa jasko thau ma empty lekhe hunxa
+        delete name[1]
+        console.log(name)
+
+        //array concat()
+        const myGirls = ["Cecilie", "Lone"];
+        const myBoys = ["Emil", "Tobias", "Linus"];
+        const myChildren = myGirls.concat(myBoys)
+        console.log(myChildren)
+
+        //Array copyWithin()
+        const fruit = ["Banana", "Orange", "Apple", "Mango"];
+        fruit.copyWithin(3, 1) //3 position lai 1 le replace garne, position 1 as it is nai rahnxa
+        console.log(fruit)
+
+        const laptop = ['dell', 'hp', 'lenovo', 'samsung', 'acer']
+        laptop.copyWithin(2, 0, 2)
+        console.log(laptop)
+
+        //Array flat()
+        //edi array bhitra pani sub array xan bhane sabai lai single array banaidinxa
+        const myArry = [[1, 2], [3, 4], [5, 6]];
+        const newArry = myArry.flat()
+        console.log(newArry)
+
+        //Array splice()
+        //splice method le array ko junsukai position item add garna sakinxa. similar to push and unshift
+        const veg = ['potato', 'tomato', 'onion', 'garlic']
+
+        //removing elements
+        console.log(veg.splice(1, 2), 'removed items') //starting index bata kati ota item remove garne bhnxa (starting index, counts kati ota item remove ganre 1 bhnera starting index lai nai manxa)
+        //after removing remaining items in array
+        console.log(veg)
+
+        //adding elements
+        const electronic = ['laptop', 'mobile', 'tv', 'earphone']
+        electronic.splice(1, 0, 'headphone', 'earbud') //1 index ma 2 ota element add gardinxa, aru jasta ko tastai rakhxa
+        console.log(electronic)
+
+        //replacing elements
+        const cosmetic = ['cream', 'powder', 'lipstick', 'lipguard']
+        cosmetic.splice(2, 1, 'foundation') //paxadi ko number le kati ota lai replace garnu bhnxa edi 0 xa bhane replace gardaina afu add hunxa aru jasta ko tastai, edi 1 xa bhane starting index matra replace garxa, 2 xa bhane tes paxi aune item lai replace garxa.
+        console.log(cosmetic)
+
+        //adding and removing items
+        const numbers = ['one', 'two', 'three', 'four', 'five']
+        numbers.splice(2, 2, 3, 4) //three and four lai 3, 4 le replace garxa
+        console.log(numbers)
+
+        //Array toSpliced()
+        // Initial array
+        const frui = ['apple', 'banana', 'orange', 'guava', 'mango', 'pineapple'];
+
+        // Remove 2 elements starting from index 1 using toSpliced
+        const newFruits = frui.toSpliced(1, 2);
+        // Output the original array (unchanged)
+        console.log(frui); // ["apple", "banana", "orange", "guava", "mango", "pineapple"]
+        // Output the new array with the elements removed
+        console.log(newFruits); // ["apple", "guava", "mango", "pineapple"]
+
+        // Initial array
+        const colors = ['red', 'green', 'blue'];
+        // Add 2 elements at index 1 using toSpliced
+        const newColors = colors.toSpliced(1, 0, 'yellow', 'purple');
+        // Output the original array (unchanged)
+        console.log(colors); // ["red", "green", "blue"]
+        // Output the new array with the elements added
+        console.log(newColors); // ["red", "yellow", "purple", "green", "blue"]
+
+        // Initial array
+        const animals = ['cat', 'dog', 'elephant', 'giraffe'];
+        // Replace 2 elements starting from index 1 using toSpliced
+        const newAnimals = animals.toSpliced(1, 2, 'lion', 'tiger');
+        // Output the original array (unchanged)
+        console.log(animals); // ["cat", "dog", "elephant", "giraffe"]
+        // Output the new array with the elements replaced
+        console.log(newAnimals); // ["cat", "lion", "tiger", "giraffe"]
+
+        // Initial array
+        const num = [1, 2, 3, 4, 5];
+        // Remove 2 elements from index 2 and add 6 and 7 using toSpliced
+        const newNumbers = num.toSpliced(2, 2, 6, 7);
+        // Output the original array (unchanged)
+        console.log(num); // [1, 2, 3, 4, 5]
+        // Output the new array with the elements removed and added
+        console.log(newNumbers); // [1, 2, 6, 7, 5]
+
+
+        //Array slice()
+        const fall = ['apple', 'banana', 'orange', 'guava', 'mango', 'pineapple'];
+
+        // Extract elements from index 2 to the end
+        const slicedFruitsToEnd = fall.slice(2); //2 index dekhi end samma sabai lai print garxa
+        console.log(slicedFruitsToEnd)
+        console.log(fall) //original array jasta ko tastai rahanxa.
+
+        // Extract elements from index 1 to 3 (not including 3)
+        const slicedFruits = fall.slice(1, 3); //1 dekhi 3 index samma count garxa but 1-2 index samma matra linxa
+        console.log(slicedFruits)
+
+        // Extract elements from index -3 to -1 (not including -1)
+        const slicedFruitsNegative = fall.slice(-3, -1);
+        console.log(slicedFruitsNegative)
+
+        // Create a copy of the entire array
+        const copiedFruits = fall.slice();//fall ko sabai item cut gari afu ma lyauxa
+        console.log(copiedFruits)
+        console.log(fall===copiedFruits) //false
     </script>
 </body>
 
