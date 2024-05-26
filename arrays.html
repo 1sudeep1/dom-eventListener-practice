@@ -115,43 +115,118 @@
         <li>
             Array indexOf()
             <dl>
-                <dt>The indexOf method returns the first index at which a given element can be found in the array, or -1 if it is not present.</dt>
+                <dt>The indexOf method returns the first index at which a given element can be found in the array, or -1
+                    if it is not present.</dt>
             </dl>
         </li>
         <li>
             Array lastIndexOf()
             <dl>
-                <dt>The lastIndexOf method returns the last index at which a given element can be found in the array, or -1 if it is not present.</dt>
+                <dt>The lastIndexOf method returns the last index at which a given element can be found in the array, or
+                    -1 if it is not present.</dt>
             </dl>
         </li>
         <li>
             Array includes()
             <dl>
-                <dt>The includes method determines whether an array includes a certain value among its entries, returning true or false.</dt>
+                <dt>The includes method determines whether an array includes a certain value among its entries,
+                    returning true or false.</dt>
             </dl>
         </li>
         <li>
             Array find()
             <dl>
-                <dt>The find method returns the value of the first element in the array that satisfies the provided testing function. Otherwise, it returns undefined.</dt>
+                <dt>The find method returns the value of the first element in the array that satisfies the provided
+                    testing function. Otherwise, it returns undefined.</dt>
             </dl>
         </li>
         <li>
             Array findIndex()
             <dl>
-                <dt>The findIndex method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1.</dt>
+                <dt>The findIndex method returns the index of the first element in the array that satisfies the provided
+                    testing function. Otherwise, it returns -1.</dt>
             </dl>
         </li>
         <li>
             Array findLast()
             <dl>
-                <dt>the findLast() method that will start from the end of an array and return the value of the first element that satisfies a condition.</dt>
+                <dt>the findLast() method that will start from the end of an array and return the value of the first
+                    element that satisfies a condition.</dt>
             </dl>
         </li>
         <li>
             Array findLastIndex()
             <dl>
                 <dt>The findLastIndex() method finds the index of the last element that satisfies a condition.</dt>
+            </dl>
+        </li>
+    </ol>
+    <h3>JavaScript Array Iteration</h3>
+    <ol>
+        <li>
+            Array forEach
+            <dl>
+                <dt>The forEach method executes a provided function once for each array element. It doesnot return any value, if we try to return it will result undefined. Also changes the original array. Since forEach returns undefined, it cannot be chained with other array methods directly.</dt>
+            </dl>
+        </li>
+        <li>
+            Array map()
+            <dl>
+                <dt>The map method creates a new array populated with the results of calling a provided function on every element in the calling array. map returns a new array, so it can be chained with other array methods (e.g., filter, reduce).</dt>
+            </dl>
+        </li>
+        <li>
+            Array filter()
+            <dl>
+                <dt>The filter method creates a new array with all elements that pass the test implemented by the provided function.</dt>
+            </dl>
+        </li>
+        <li>
+            Array reduce()
+            <dl>
+                <dt>The reduce method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.</dt>
+            </dl>
+        </li>
+        <li>
+            Array reduceRight()
+            <dl>
+                <dt>The reduceRight method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.</dt>
+            </dl>
+        </li>
+        <li>
+            Array every()
+            <dl>
+                <dt>The every method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.</dt>
+            </dl>
+        </li>
+        <li>
+            Array some()
+            <dl>
+                <dt>The some method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.</dt>
+            </dl>
+        </li>
+        <li>
+            Array keys()
+            <dl>
+                <dt>The keys method returns a new Array Iterator object that contains the keys for each index in the array.</dt>
+            </dl>
+        </li>
+        <li>
+            Array values()
+            <dl>
+                <dt>The values method returns a new Array Iterator object that contains the values for each index in the array.</dt>
+            </dl>
+        </li>
+        <li>
+            Array entries()
+            <dl>
+                <dt>The entries method returns a new Array Iterator object that contains the key/value pairs for each index in the array.</dt>
+            </dl>
+        </li>
+        <li>
+            Array Spread (...)
+            <dl>
+                <dt>The ... operator expands an iterable (like an array) into more elements:</dt>
             </dl>
         </li>
     </ol>
@@ -374,10 +449,10 @@
         // Create a copy of the entire array
         const copiedFruits = fall.slice();//fall ko sabai item cut gari afu ma lyauxa
         console.log(copiedFruits)
-        console.log(fall===copiedFruits) //false
+        console.log(fall === copiedFruits) //false
 
         //Array indexOf()
-        const books=['english', 'nepali', 'maths', 'social']
+        const books = ['english', 'nepali', 'maths', 'social']
         console.log(books.indexOf('social')) //index position return garxa, edi same item dherai xan bhane serial wise search garxa jun first ma bhetauxa tesko index return garxa
         console.log(books.indexOf('health')) //edi bhetyana bhane -1 return garxa
 
@@ -391,22 +466,90 @@
 
         //Array find()
         const numb = [1, 2, 3, 4, 5, 6];
-        const firstEven= numb.find(n=>n%2===0) //serial wise check garxa jun number first ma match garxa tyai return garxa, baki aru check gardaina
+        const firstEven = numb.find(n => n % 2 === 0) //serial wise check garxa jun number first ma match garxa tyai return garxa, baki aru check gardaina
         console.log(firstEven)
 
         //Array findIndex()
-        const firstIndex= numb.findIndex(n=>n%2===0)
+        const firstIndex = numb.findIndex(n => n % 2 === 0)
         console.log(firstIndex) //serial wise check garxa jun number first ma match garxa tyai number ko index return garxa, baki eti kai xordinxa
-    
+
         //Array findLast()   
-        const lastEven= numb.findLast(n=>n%2===0) //serial wise but last bata search garxa
+        const lastEven = numb.findLast(n => n % 2 === 0) //serial wise but last bata search garxa
         console.log(lastEven)
 
         //Array findLastIndex()
-        const lastIndex= numb.findLastIndex(n=>n%2===0)
+        const lastIndex = numb.findLastIndex(n => n % 2 === 0)
         console.log(lastIndex)
 
-        
+        //Array forEach()
+        //partek element lai ek choti call garxa
+        const names=['ram', 'shyam', 'hari', 'gita', 'sita']
+        names.forEach((item, id)=>{
+            console.log(id+1, item)
+        })
+
+        //Array map()
+        //partek element lai call garxa ra partek element ko operation perform garxa, original array lai kai pani change gardaina
+        const numbers1= [45, 4, 9, 16, 25];
+        const numbers2= numbers1.map(myFunction);
+        function myFunction(value, index, array){
+            return value*2
+        }
+        console.log(numbers2)
+
+        //Array filter()
+        const count=[3, 8, 11, 12, 17, 18]
+        const evenCount=count.filter(a=>a%2===0)
+        console.log(evenCount)
+
+        //Array reduce()
+        const numberss = [1, 2, 3, 4, 5];
+        const sum= numberss.reduce((accumulator, currentValue)=>accumulator+currentValue, 0); //accumulatore bhneko eut temp variable, currentValue is current value palaipalo auxan ra add hunxan, 0 is initial value
+        console.log(sum)
+
+        //Array reduceRight()
+        const sumRight= numberss.reduceRight((accumulator, currentValue)=>accumulator+currentValue, 0); //right to  left kam garxa same as reduce
+        console.log(sumRight)
+
+        //Array every()
+        //sabai le condition match garnu paryo ani ball true return garxa natra false return garxa
+        const numbersss = [1, 2, 3, 4, 5];
+        const allEven= numbersss.every(num=>num%2===0)
+        console.log(allEven)
+
+        //Array some()
+        //array ma bhyeko kunai euta element le condition match garyo bhane pani true return garxa.
+        const hasEven= numbersss.some(num=>num%2===0)
+        console.log(hasEven)
+
+        //Array keys()
+        //array element ko index matra print garxa
+        const color=['blue', 'red', 'green', 'yellow']
+        const iterator= color.keys()
+        for(let key of iterator){
+            console.log(key)
+        }
+
+        //Array values()
+        const iterator1= color.values();
+        for (let values of iterator1){
+            console.log(values)
+        }
+
+        //Array entries()
+        const iterator3= color.entries()
+        for (let [index, values] of iterator3){
+            console.log(`${index}, ${values}`)
+        }
+
+        //Array Spread (...)
+        //array haru lai concat garna help garxa
+        const q1 = ["Jan", "Feb", "Mar"];
+        const q2 = ["Apr", "May", "Jun"];
+        const q3 = ["Jul", "Aug", "Sep"];
+        const q4 = ["Oct", "Nov", "May"];
+        const year = [...q1, ...q2, ...q3, ...q4];
+        console.log(year)
     </script>
 </body>
 
