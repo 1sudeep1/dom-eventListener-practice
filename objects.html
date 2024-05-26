@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects in JavaScript</title>
+</head>
+
+<body>
+    <h1>Objects in JavaScript</h1>
+    <h3>Creating a JavaScript Object</h3>
+    <ol>
+        <li>Create an empty JavaScript object using {}, and adding properties</li>
+        <li>Create an empty JavaScript object using new Object(), and adding properties:</li>
+        <li>Object creation using Constructor Functions</li>
+    </ol>
+
+    <h3>Object Methods</h3>
+    <ol>
+        <li>
+            Object.assign(target, source)
+            <dl>
+                <dt>When you use Object.assign(person1, person2), it copies all enumerable own properties from person2
+                    to person1. This means that the properties in person2 will overwrite the properties with the same
+                    key in person1.</dt>
+            </dl>
+        </li>
+        <li>Object.create(object)</li>
+        <li>
+            Object.entries(object)
+            <dl>
+                <dt>Returns an array of a given object's own enumerable string-keyed property [key, value] pairs.</dt>
+            </dl>
+        </li>
+        <li>
+            Object.fromEntries()
+            <dl>
+                <dt>The fromEntries() method creates an object from a list of key/value pairs.</dt>
+            </dl>
+        </li>
+        <li>
+            Object.keys(object)
+            <dl>
+                <dt>The Object.keys() method returns an array with the keys of an object.</dt>
+            </dl>
+        </li>
+        <li>
+            Object.values(object)
+            <dl>
+                <dt>Object.values() is similar to Object.entries(), but returns a single dimension array of the object
+                    values</dt>
+            </dl>
+        </li>
+        <li>Object.groupBy(object, callback)</li>
+    </ol>
+    <script>
+        // Create an Object
+        // Create an empty JavaScript object using {}, and adding properties
+        const person = {}
+        // Add Properties
+        person.firstName = "John";
+        person.lastName = "Doe";
+        person.age = 50;
+        person.eyeColor = "blue";
+        console.log(person)
+
+        //Create an empty JavaScript object using new Object(), and adding properties:
+        const person1 = new Object()
+        // Add Properties
+        person1.firstName = "John";
+        person1.lastName = "Doe";
+        person1.age = 50;
+        person1.eyeColor = "blue";
+        console.log(person1)
+
+        //Object creation using Constructor Functions
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+        const student = new Person('ram', 'thapa', 20, 'blue')
+        console.log(student)
+
+        //Object.assign(target, source)
+        //student2 ko value student1 ma auxa
+        const student1 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        const student2 = { firstName: "Anne", lastName: "Smith" };
+        Object.assign(student1, student2)
+        console.log(student1)
+
+        //Object.entries()
+        //object lai array me convert garxa, partek key and value ko object banxa ra sabai array haru parent array ma wrap bhyeko hunxan
+        const entriesResult = Object.entries(student1)
+        console.log(entriesResult)
+
+        //Objec.fromEntries()
+        //esle array lai object ma convert garxa
+        const fromEntriesResult = Object.fromEntries(entriesResult)
+        console.log(fromEntriesResult)
+
+        //Object.keys()
+        //key ko matra array dinxa
+        const keyResult = Object.keys(student1)
+        console.log(keyResult)
+
+        //Object.values()
+        //value ko matra array dinxa
+        const valueResult = Object.values(student1)
+        console.log(valueResult)
+
+        //Object.groupBy()
+        const fruits = [
+            { name: "apples", quantity: 300 },
+            { name: "bananas", quantity: 500 },
+            { name: "oranges", quantity: 200 },
+            { name: "kiwi", quantity: 150 }
+        ];
+
+        // Define the groupBy function
+        const groupByQuantity = (array) => {
+            return array.reduce((result, currentValue) => {
+                // Determine the category based on quantity
+                let category;
+                if (currentValue.quantity < 200) {
+                    category = "low";
+                } else if (currentValue.quantity < 400) {
+                    category = "medium";
+                } else {
+                    category = "high";
+                }
+
+                // Initialize the group if it doesn't exist
+                if (!result[category]) {
+                    result[category] = [];
+                }
+
+                // Add the current fruit to the appropriate category
+                result[category].push(currentValue);
+                return result;
+            }, {}); // Initial value is an empty object
+        };
+
+        // Group the fruits by quantity
+        const groupedFruits = groupByQuantity(fruits);
+
+        console.log(groupedFruits);
+        
+    </script>
+</body>
+
+</html>
